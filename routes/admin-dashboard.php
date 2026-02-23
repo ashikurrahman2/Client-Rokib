@@ -19,6 +19,7 @@ use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\RessumeController;
 use App\Http\Controllers\Admin\FactController;
 use App\Http\Controllers\Admin\ChooseUsController;
 use App\Http\Controllers\Admin\AboutController;
@@ -86,6 +87,7 @@ Route::prefix('admin')->middleware(['auth:admin', "role:{$allRoles}"])->group(fu
     Route::resource('about', AboutController::class);
     Route::resource('fact', FactController::class);
     Route::resource('service', ServiceController::class);
+    Route::resource('ressume', RessumeController::class);
     Route::resource('choose-us', ChooseUsController::class);
     Route::resource('faq', FaqController::class);
     Route::get('/messages', [ContactUsController::class, 'index'])->name('contactus.index');

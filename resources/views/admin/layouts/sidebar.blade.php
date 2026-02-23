@@ -61,6 +61,9 @@
                            
                                 <li class="pc-item"><a class="pc-link" href="{{ route('service.index') }}">Service Info</a>
                                 </li>
+
+                                     <li class="pc-item"><a class="pc-link" href="{{ route('ressume.index') }}">Ressume Info</a>
+                                </li>
                        
 
 
