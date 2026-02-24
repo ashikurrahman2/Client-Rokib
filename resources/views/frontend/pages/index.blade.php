@@ -411,7 +411,7 @@
         </div>
 
         {{-- Right Col - Tools --}}
-        <div>
+        {{-- <div>
           <div class="border-b border-[#494C5F] pb-3">
             <h3 class="text-borderl-500 text-2xl">Tools I use every day</h3>
           </div>
@@ -522,7 +522,7 @@
               </svg>
             </li>
           </ul>
-        </div>
+        </div> --}}
       </div>
 
       <!-- Freelance Clients -->
@@ -532,7 +532,7 @@
         </div>
         <div class="grid items-center grid-cols-2 gap-6 md:grid-cols-3 xl:grid-cols-6 xl:divide-x divide-white divide-opacity-20 mt-10 pb-8">
           <a href="#" class="px-7">
-            <img src="{{ asset('assets/images/clients/f-c-2.png') }}" class="opacity-30 hover:opacity-100 transition" alt="Logo"/>
+            <img src="{{ asset('frontend/assets/images/clients/f-c-2.png') }}" class="opacity-30 hover:opacity-100 transition" alt="Logo"/>
           </a>
           <a href="#" class="px-7">
             <img src="{{ asset('assets/images/clients/f-c-2.png') }}" class="opacity-30 hover:opacity-100 transition" alt="Logo"/>

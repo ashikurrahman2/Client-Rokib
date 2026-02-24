@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\SeoController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\ContactUsController;
@@ -83,6 +84,7 @@ Route::prefix('admin')->middleware(['auth:admin', "role:{$allRoles}"])->group(fu
 
     // Front Page Management
     Route::resource('slider', SliderController::class);
+    Route::resource('skill', SkillController::class);
     Route::resource('feature', FeatureController::class);
     Route::resource('about', AboutController::class);
     Route::resource('fact', FactController::class);

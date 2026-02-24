@@ -64,6 +64,8 @@
 
                                      <li class="pc-item"><a class="pc-link" href="{{ route('ressume.index') }}">Ressume Info</a>
                                 </li>
+                                <li class="pc-item"><a class="pc-link" href="{{ route('skill.index') }}">Skill Info</a>
+                                </li>
                        
 
 
