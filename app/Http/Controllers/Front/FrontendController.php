@@ -15,6 +15,8 @@ use App\Models\review;
 use App\Models\Ressume;
 use App\Models\Service;
 use App\Models\Setting;
+use App\Models\Skill;
+use App\Models\Portfolio;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\Models\Wishlist;
@@ -23,10 +25,12 @@ use Illuminate\Http\Request;
 class FrontendController extends Controller
 {
     public function index() {
+            $portfolios = Portfolio::all();
         $services = Service::where('status', 1)
                        ->orderBy('created_at', 'desc')
                        ->get();
     $ressume = Ressume::latest()->first();
+        $skills = Skill::all();
         $sliders = Slider::all();
         $top_viewed_categories = Category::orderBy('view_count', 'DESC')
                                 ->limit(6)
@@ -68,7 +72,7 @@ class FrontendController extends Controller
         // Home Page Category
         $home_category = Category::where('home_page',1)->orderBy('category_name', 'DESC')->get();
          $settings=Setting::all();
-        return view('frontend.pages.index', compact('sliders', 'ressume', 'services','settings','top_viewed_categories','trendy_product_new', 'brands', 'top_rated_products', 'bannerproduct', 'featured', 'popular_product', 'trendy_product','today_deal', 'home_category'));
+        return view('frontend.pages.index', compact('sliders', 'ressume', 'portfolios', 'skills', 'services','settings','top_viewed_categories','trendy_product_new', 'brands', 'top_rated_products', 'bannerproduct', 'featured', 'popular_product', 'trendy_product','today_deal', 'home_category'));
     }
 
     private function calculateAndSortRatings($products) {

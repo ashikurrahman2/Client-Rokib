@@ -59,30 +59,30 @@
               <ul class="space-y-4">
                 <li>
                   <a
-                    href="#"
+                    href="/"
                     class="font-medium transition hover:text-new-500 text-base text-white"
                     >Home</a
                   >
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="{{route('about')}}"
+                    class="font-medium transition hover:text-new-500 text-base text-white"
+                    >About</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="{{route('ser')}}"
                     class="font-medium transition hover:text-new-500 text-base text-white"
                     >Service</a
                   >
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="{{route('port')}}"
                     class="font-medium transition hover:text-new-500 text-base text-white"
-                    >Blog</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="font-medium transition hover:text-new-500 text-base text-white"
-                    >Contact Us</a
+                    >Portfolio</a
                   >
                 </li>
               </ul>
@@ -94,30 +94,9 @@
               <ul class="space-y-4">
                 <li>
                   <a
-                    href="#"
+                    href="{{route('contact')}}"
                     class="font-medium transition hover:text-new-500 text-base text-white"
-                    >Contact & Faq</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="font-medium transition hover:text-new-500 text-base text-white"
-                    >Track Your Order</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="font-medium transition hover:text-new-500 text-base text-white"
-                    >Shipping</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="font-medium transition hover:text-new-500 text-base text-white"
-                    >Trade Program</a
+                    >Contact</a
                   >
                 </li>
               </ul>

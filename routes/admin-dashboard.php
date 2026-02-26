@@ -23,6 +23,7 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\RessumeController;
 use App\Http\Controllers\Admin\FactController;
 use App\Http\Controllers\Admin\ChooseUsController;
+use App\Http\Controllers\Admin\PortController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
@@ -87,6 +88,7 @@ Route::prefix('admin')->middleware(['auth:admin', "role:{$allRoles}"])->group(fu
     Route::resource('skill', SkillController::class);
     Route::resource('feature', FeatureController::class);
     Route::resource('about', AboutController::class);
+    Route::resource('portfolio', PortController::class);
     Route::resource('fact', FactController::class);
     Route::resource('service', ServiceController::class);
     Route::resource('ressume', RessumeController::class);

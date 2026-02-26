@@ -70,10 +70,9 @@
 
 
 
-                            @can('view choose_us')
-                                <li class="pc-item"><a class="pc-link" href="{{ route('choose-us.index') }}">Why choose Us</a>
+                                <li class="pc-item"><a class="pc-link" href="{{ route('portfolio.index') }}">Portfolio</a>
                                 </li>
-                            @endcan
+                         
                             @can('view contact_messages')
                                 <li class="pc-item"><a class="pc-link" href="{{ route('contactus.index') }}">Contact US</a>
                                 </li>

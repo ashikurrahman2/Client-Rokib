@@ -371,162 +371,33 @@
         </div>
       </div>
 
-      <!-- Skills -->
-      <div class="grid lg:grid-cols-2 gap-x-20 gap-y-10">
+ <!-- Skills -->
+<div class="grid lg:grid-cols-2 gap-x-20 gap-y-10">
 
-        {{-- Left Col - Skills --}}
-        <div>
-          <div class="border-b border-[#494C5F] pb-3">
+    {{-- Left Col - Skills --}}
+    <div>
+        <div class="border-b border-[#494C5F] pb-3">
             <h3 class="text-borderl-500 text-2xl">Skills</h3>
-          </div>
-          <ul class="mt-7 flex flex-wrap gap-3">
-            <li>
-              <a href="#" class="bg-[#16213B] block px-4 py-3 hover:bg-new-500 hover:text-interface-100 transition rounded-md text-white text-xl">Html</a>
-            </li>
-            <li>
-              <a href="#" class="bg-[#16213B] block px-4 py-3 hover:bg-new-500 hover:text-interface-100 transition rounded-md text-white text-xl">CSS</a>
-            </li>
-            <li>
-              <a href="#" class="bg-[#16213B] block px-4 py-3 hover:bg-new-500 hover:text-interface-100 transition rounded-md text-white text-xl">Front-end</a>
-            </li>
-            <li>
-              <a href="#" class="bg-[#16213B] block px-4 py-3 hover:bg-new-500 hover:text-interface-100 transition rounded-md text-white text-xl">PHP</a>
-            </li>
-            <li>
-              <a href="#" class="bg-[#16213B] block px-4 py-3 hover:bg-new-500 hover:text-interface-100 transition rounded-md text-white text-xl">Back-end</a>
-            </li>
-            <li>
-              <a href="#" class="bg-[#16213B] block px-4 py-3 hover:bg-new-500 hover:text-interface-100 transition rounded-md text-white text-xl">Java Script</a>
-            </li>
-            <li>
-              <a href="#" class="bg-[#16213B] block px-4 py-3 hover:bg-new-500 hover:text-interface-100 transition rounded-md text-white text-xl">Laravel</a>
-            </li>
-            <li>
-              <a href="#" class="bg-[#16213B] block px-4 py-3 hover:bg-new-500 hover:text-interface-100 transition rounded-md text-white text-xl">C++</a>
-            </li>
-            <li>
-              <a href="#" class="bg-[#16213B] block px-4 py-3 hover:bg-new-500 hover:text-interface-100 transition rounded-md text-white text-xl">Figma</a>
-            </li>
-          </ul>
         </div>
+        <ul class="mt-7 flex flex-wrap gap-3">
+            @forelse($skills as $skill)
+                <li>
+                    <a href="#" class="bg-[#16213B] block px-4 py-3 hover:bg-new-500 hover:text-interface-100 transition rounded-md text-white text-xl">
+                        {{ $skill->skill_name }}
+                    </a>
+                </li>
+            @empty
+                <li>
+                    <p class="text-white text-xl">No skills found.</p>
+                </li>
+            @endforelse
+        </ul>
+    </div>
 
-        {{-- Right Col - Tools --}}
-        {{-- <div>
-          <div class="border-b border-[#494C5F] pb-3">
-            <h3 class="text-borderl-500 text-2xl">Tools I use every day</h3>
-          </div>
-          <ul class="mt-7 flex flex-wrap gap-x-12 gap-y-7">
-            <li>
-              <svg class="fill-[#1D2A47] hover:fill-new-500 transition" width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_537_18541)">
-                  <path d="M36.5732 14.7321C36.5732 17.2935 34.4895 19.3782 31.9271 19.3782H27.1318V10.0859H31.9271C34.4895 10.0859 36.5732 12.1706 36.5732 14.7321Z"/>
-                  <path d="M31.9274 21.642H31.7782C29.2158 21.642 27.1321 23.7266 27.1321 26.2881C27.1321 28.8505 29.2158 30.9342 31.7782 30.9342H31.9274C34.4898 30.9342 36.5735 28.8505 36.5735 26.2881C36.5735 23.7266 34.4898 21.642 31.9274 21.642ZM20.0726 10.0865C17.5102 10.0865 15.4265 12.1712 15.4265 14.7326C15.4265 17.2941 17.5102 19.3788 20.0726 19.3788H24.8679V10.0865H20.0726ZM46.381 0.288086H5.61896C2.5158 0.288086 0 2.80389 0 5.90705V46.6691C0 49.7723 2.5158 52.2881 5.61896 52.2881H46.381C49.4842 52.2881 52 49.7723 52 46.6691V5.90705C52 2.80389 49.4842 0.288086 46.381 0.288086ZM38.8367 26.2881C38.8367 30.0983 35.7376 33.1974 31.9274 33.1974H31.7782C29.9908 33.1974 28.3596 32.5147 27.1321 31.3978V37.7685C27.1321 41.6193 23.9813 44.7529 20.1092 44.7529C16.2787 44.7529 13.1633 41.6538 13.1633 37.8435C13.1633 35.4292 14.407 33.3009 16.2878 32.0663C14.407 30.8307 13.1633 28.7024 13.1633 26.2881C13.1633 23.8747 14.407 21.7465 16.2878 20.5109C14.407 19.2753 13.1633 17.147 13.1633 14.7326C13.1633 10.9224 16.2624 7.82332 20.0726 7.82332H31.9274C35.7376 7.82332 38.8367 10.9224 38.8367 14.7326C38.8367 17.147 37.593 19.2753 35.7122 20.5109C37.593 21.7465 38.8367 23.8747 38.8367 26.2881Z"/>
-                </g>
-                <defs>
-                  <clipPath id="clip0_537_18541">
-                    <rect width="52" height="52" transform="translate(0 0.288086)"/>
-                  </clipPath>
-                </defs>
-              </svg>
-            </li>
-            <li>
-              <svg class="fill-[#1D2A47] hover:fill-new-500 transition" width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_537_18545)">
-                  <path d="M21.3795 17.9248H21.3353L18.6166 26.9598H24.1866L21.3795 17.9248ZM43.3069 0.938477H9.31962C4.16592 0.938477 0 5.0548 0 10.1471V42.4298C0 47.5222 4.16592 51.6385 9.31962 51.6385H43.3069C48.4606 51.6385 52.6265 47.5222 52.6265 42.4298V10.1471C52.6265 5.0548 48.4606 0.938477 43.3069 0.938477ZM32.2337 36.7535H27.6505C27.4974 36.7748 27.3442 36.6672 27.3 36.5148L25.5023 31.3585H17.3452L15.678 36.4498C15.6348 36.6448 15.459 36.7748 15.2617 36.7535H11.1389C10.8984 36.7535 10.8326 36.6235 10.8984 36.3635L17.9588 16.2785C18.0246 16.0622 18.0904 15.8235 18.1777 15.5635C18.2661 15.1085 18.3093 14.6321 18.3093 14.1548C18.2877 14.0471 18.3751 13.9385 18.4851 13.9171H24.164C24.3398 13.9171 24.4271 13.9822 24.4497 14.0898L32.4527 36.4072C32.5185 36.6448 32.4527 36.7535 32.2337 36.7535ZM39.6888 36.4285C39.6888 36.6672 39.6014 36.7748 39.4041 36.7748H35.1066C34.8866 36.7748 34.7777 36.6448 34.7777 36.4285V19.7448C34.7777 19.5285 34.8651 19.4422 35.0624 19.4422H39.4041C39.6014 19.4422 39.6888 19.5498 39.6888 19.7448V36.4285ZM39.2283 16.8635C38.7247 17.3835 37.9785 17.6648 37.2333 17.6222C36.5096 17.6435 35.8076 17.3622 35.2813 16.8635C34.7777 16.3222 34.5146 15.6072 34.5361 14.8698C34.5146 14.1335 34.7993 13.4398 35.3255 12.9421C35.8518 12.4435 36.5538 12.1835 37.2775 12.1835C38.1326 12.1835 38.7905 12.4435 39.2725 12.9421C39.7546 13.4621 40.0177 14.1548 39.9961 14.8698C40.0177 15.6072 39.7546 16.3222 39.2283 16.8635Z"/>
-                </g>
-                <defs>
-                  <clipPath id="clip0_537_18545">
-                    <rect width="52.6265" height="52" transform="translate(0 0.288086)"/>
-                  </clipPath>
-                </defs>
-              </svg>
-            </li>
-            <li>
-              <svg class="fill-[#1D2A47] hover:fill-new-500 transition" width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_537_18551)">
-                  <path d="M33.2227 0.288086L3.97266 11.6631V42.5381L13.7227 39.2881V13.2881L33.2227 10.0381V45.9311L3.97266 42.5381L33.2227 52.2881L49.4727 47.4131V5.16309L33.2227 0.288086Z"/>
-                </g>
-                <defs>
-                  <clipPath id="clip0_537_18551">
-                    <rect width="52" height="52" transform="translate(0.722656 0.288086)"/>
-                  </clipPath>
-                </defs>
-              </svg>
-            </li>
-            <li>
-              <svg class="fill-[#1D2A47] hover:fill-new-500 transition" width="54" height="53" viewBox="0 0 54 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_537_18555)">
-                  <path d="M7.08134 45.794L27.048 52.2881L47.0146 45.794L50.2893 0.288086H3.80664L7.08134 45.794ZM42.0037 7.90527L41.5641 13.999H18.7203L19.2772 21.8193H41.0144L39.6907 40.1617L27.048 44.3361L14.4049 40.1617L13.9728 34.0068H20.14L20.2649 35.6818L27.048 37.9063L33.8322 35.6822L34.3863 27.9131H13.5107L12.0922 7.90527H42.0037Z"/>
-                </g>
-                <defs>
-                  <clipPath id="clip0_537_18555">
-                    <rect width="52.6265" height="52" transform="translate(0.722656 0.288086)"/>
-                  </clipPath>
-                </defs>
-              </svg>
-            </li>
-            <li>
-              <svg class="fill-[#1D2A47] hover:fill-new-500 transition" width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_537_18558)">
-                  <path d="M0 0.288086L4.3992 47.9545L26.3939 52.2881L48.3887 47.9545L52.7879 0.288086H0ZM24.1947 43.0139L12.5655 40.7266L11.8331 32.7881H16.2513L16.6492 37.1125L19.7953 37.7306V8.95454H24.1945V43.0139H24.1947ZM42.7529 13.2881H32.9924V24.1216H41.7538L40.2224 40.7272L28.5932 43.0145V38.5964L36.1373 37.1131L36.9363 28.4552H28.5932V8.95518H43.1522L42.7529 13.2881Z"/>
-                </g>
-                <defs>
-                  <clipPath id="clip0_537_18558">
-                    <rect width="52.7879" height="52" transform="translate(0 0.288086)"/>
-                  </clipPath>
-                </defs>
-              </svg>
-            </li>
-            <li>
-              <svg class="fill-[#1D2A47] hover:fill-new-500 transition" width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_537_18565)">
-                  <path d="M27.177 27.6484C27.177 27.6484 27.1358 27.6484 27.0945 27.6484C25.6512 31.8546 24.2079 36.0608 22.7646 40.267C25.8162 41.133 28.7853 41.0505 31.7131 40.0608C30.1873 35.8959 28.7028 31.7721 27.177 27.6484Z"/>
-                  <path d="M13.6103 20.4326C13.5691 20.4326 13.5691 20.4326 13.5279 20.4326C11.9196 24.2677 11.8371 28.144 13.4866 32.0202C14.8887 35.3192 17.2392 37.7522 20.4557 39.4017C20.4969 39.4017 20.4969 39.3605 20.5382 39.3605C18.2289 33.0099 15.9196 26.7419 13.6103 20.4326Z"/>
-                  <path d="M39.837 0.308594H13.9401C6.76485 0.308594 0.90918 6.16426 0.90918 13.3395V39.2777C0.90918 46.4117 6.76485 52.2674 13.9401 52.2674H39.8783C47.0535 52.2674 52.9092 46.4117 52.9092 39.2364V13.3395C52.8679 6.16426 47.0123 0.308594 39.837 0.308594ZM42.971 27.1127C42.971 27.2364 42.971 27.3189 42.971 27.4426C42.8473 29.5869 42.3112 31.6488 41.3215 33.5457C38.7236 38.4529 34.7236 41.3395 29.1978 42.2467C28.703 42.3292 28.2081 42.3704 27.7133 42.3704H26.0638C25.9813 42.3704 25.8576 42.3704 25.7339 42.3704C23.5896 42.2467 21.569 41.7519 19.7133 40.7622C14.7648 38.1643 11.8783 34.1643 10.971 28.6385C10.8473 28.1024 10.8061 27.6488 10.8061 27.1127V25.4632C10.8061 25.3808 10.8061 25.257 10.8061 25.1333C10.9298 22.9478 11.4659 20.8859 12.4968 18.989C15.0947 14.123 19.0947 11.2777 24.538 10.3705C25.0329 10.288 25.569 10.2467 26.0638 10.2467H27.7133C27.837 10.2467 27.9195 10.2467 28.0432 10.2467C30.1463 10.3704 32.1669 10.8653 34.0638 11.855C39.0123 14.4529 41.9401 18.4529 42.8473 24.0199C42.9298 24.5148 42.971 25.0096 42.971 25.5045V27.1127Z"/>
-                </g>
-                <defs>
-                  <clipPath id="clip0_537_18565">
-                    <rect width="52" height="52" transform="translate(0.90918 0.288086)"/>
-                  </clipPath>
-                </defs>
-              </svg>
-            </li>
-            <li>
-              <svg class="fill-[#1D2A47] hover:fill-new-500 transition" width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_537_18562)">
-                  <path d="M12.6904 30.3506C12.6904 27.2704 15.1962 24.7646 18.2764 24.7646H35.542C36.942 24.7646 38.0811 23.6256 38.0811 22.2256V7.90527C38.0811 3.70511 34.664 0.288086 30.4639 0.288086H23.3545C19.1543 0.288086 15.7373 3.70511 15.7373 7.90527V12.0693H26.9092C27.7506 12.0693 28.4326 12.7513 28.4326 13.5928C28.4326 14.4342 27.7506 15.1162 26.9092 15.1162H8.52637C4.3262 15.1162 0.90918 18.5332 0.90918 22.7334V29.8428C0.90918 34.0429 4.3262 37.46 8.52637 37.46H12.6904V30.3506ZM23.3545 8.00684C22.513 8.00684 21.8311 7.32486 21.8311 6.4834C21.8311 5.64194 22.513 4.95996 23.3545 4.95996C24.196 4.95996 24.8779 5.64194 24.8779 6.4834C24.8779 7.32486 24.196 8.00684 23.3545 8.00684Z"/>
-                  <path d="M45.292 15.1162H41.1279V22.2256C41.1279 25.3058 38.6222 27.8115 35.542 27.8115H18.2764C16.8763 27.8115 15.7373 28.9505 15.7373 30.3506V44.6709C15.7373 48.8711 19.1543 52.2881 23.3545 52.2881H30.4639C34.664 52.2881 38.0811 48.8711 38.0811 44.6709V40.5068H26.9092C26.0677 40.5068 25.3857 39.8249 25.3857 38.9834C25.3857 38.1419 26.0677 37.46 26.9092 37.46H45.292C49.4922 37.46 52.9092 34.0429 52.9092 29.8428V22.7334C52.9092 18.5332 49.4922 15.1162 45.292 15.1162ZM30.4639 44.5693C31.3053 44.5693 31.9873 45.2513 31.9873 46.0928C31.9873 46.9342 31.3053 47.6162 30.4639 47.6162C29.6224 47.6162 28.9404 46.9342 28.9404 46.0928C28.9404 45.2513 29.6224 44.5693 30.4639 44.5693Z"/>
-                </g>
-                <defs>
-                  <clipPath id="clip0_537_18562">
-                    <rect width="52" height="52" transform="translate(0.90918 0.288086)"/>
-                  </clipPath>
-                </defs>
-              </svg>
-            </li>
-            <li>
-              <svg class="fill-[#1D2A47] hover:fill-new-500 transition" width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_537_18581)">
-                  <path d="M47.2903 52.2881H6.52805C3.42489 52.2881 0.90918 49.7724 0.90918 46.6692V5.90696C0.90918 2.80379 3.42489 0.288086 6.52805 0.288086H47.2902C50.3935 0.288086 52.9091 2.80379 52.9091 5.90696V46.6691C52.9092 49.7724 50.3935 52.2881 47.2903 52.2881Z"/>
-                  <path d="M26.9625 6.36523C15.9763 6.3626 7.06797 15.2666 7.06543 26.2528C7.06289 37.239 15.9668 46.1472 26.9531 46.1499C37.9393 46.1525 46.8475 37.2485 46.8502 26.2622C46.8502 26.2606 46.8502 26.2591 46.8502 26.2575C46.8501 15.2731 37.9469 6.36777 26.9625 6.36523Z" fill="#091530"/>
-                  <path d="M18.6719 17.9668H21.9873V34.5437H18.6719V17.9668Z" fill="currenColor"/>
-                  <path d="M25.3027 31.2285H35.2489V34.5439H25.3027V31.2285Z" fill="currenColor"/>
-                  <path d="M25.3027 24.5977H35.2489V27.913H25.3027V24.5977Z" fill="currenColor"/>
-                  <path d="M25.3027 17.9668H35.2489V21.2822H25.3027V17.9668Z" fill="currenColor"/>
-                </g>
-                <defs>
-                  <clipPath id="clip0_537_18581">
-                    <rect width="52" height="52" fill="white" transform="translate(0.90918 0.288086)"/>
-                  </clipPath>
-                </defs>
-              </svg>
-            </li>
-          </ul>
-        </div> --}}
-      </div>
+</div>
 
       <!-- Freelance Clients -->
-      <div class="pt-16">
+      {{-- <div class="pt-16">
         <div class="border-b border-[#494C5F] pb-3">
           <h3 class="text-borderl-500 font-semibold text-2xl">Freelance Clients</h3>
         </div>
@@ -550,7 +421,7 @@
             <img src="{{ asset('assets/images/clients/f-c-1.png') }}" class="opacity-30 hover:opacity-100 transition" alt="Logo"/>
           </a>
         </div>
-      </div>
+      </div> --}}
 
     </div>
   </div>
@@ -593,10 +464,11 @@
             class="grid grid-cols-1 gap-y-5 md:grid-cols-2 lg:grid-cols-3 md:gap-5 lg:gap-7"
           >
             <!-- Single Item -->
+               @foreach($portfolios as $index => $portfolio)
             <div
               class="relative group min-h-[370px] rounded-lg cursor-pointer overflow-hidden"
               style="
-                background: url('assets/images/portfolio/ms-1.jpg') no-repeat
+                background: url('{{asset($portfolio->image)}}') no-repeat
                   center center/cover;
               "
             >
@@ -610,171 +482,25 @@
                     <a
                       href="portfolio-details.html"
                       class="text-3xl font-semibold text-white"
-                      >User Data Collects for Movie App</a
+                      >{{$portfolio->title}}</a
                     >
                   </h3>
                   <span class="flex items-center gap-2 text-white">
                     <span
                       class="w-2 h-2 rounded-full inline-block bg-new-500"
                     ></span>
-                    UI UX Project</span
+                    {{$portfolio->sub_title}}</span
                   >
                   <a
-                    href="portfolio-details.html"
+                    href="{{$portfolio->pro_link}}"
+                      target="_blank"
                     class="grid place-content-center transition mt-6 px-3 py-2 border border-new-500 text-new-500 text-sm rounded"
                     >View Project
                   </a>
                 </div>
               </div>
             </div>
-            <!-- Single Item -->
-            <div
-              class="relative group min-h-[370px] rounded-lg cursor-pointer overflow-hidden lg:col-span-2"
-              style="
-                background: url('assets/images/portfolio/ms-2.jpg') no-repeat
-                  center center/cover;
-              "
-            >
-              <div
-                class="bg-interface-100 bg-opacity-0 transition-opacity duration-500 ease-in-out absolute w-full h-full group-hover:bg-opacity-80 rounded-lg flex flex-col items-center justify-center"
-              >
-                <div
-                  class="transform transition-transform duration-700 ease-in-out translate-y-24 opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 max-w-xs flex flex-col items-center justify-center text-center"
-                >
-                  <h3 class="text-white">
-                    <a
-                      href="portfolio-details.html"
-                      class="text-3xl font-semibold text-white"
-                      >User Data Collects for Movie App</a
-                    >
-                  </h3>
-                  <span class="flex items-center gap-2 text-white">
-                    <span
-                      class="w-2 h-2 rounded-full inline-block bg-new-500"
-                    ></span>
-                    UI UX Project</span
-                  >
-                  <a
-                    href="portfolio-details.html"
-                    class="grid place-content-center mt-6 px-3 py-2 border border-new-500 text-new-500 text-sm rounded"
-                    >View Project
-                  </a>
-                </div>
-              </div>
-            </div>
-            <!-- Single Item -->
-            <div
-              class="relative group min-h-[370px] rounded-lg cursor-pointer overflow-hidden"
-              style="
-                background: url('{{ asset('/') }}frontend/assets/images/portfolio/ms-3.jpg') no-repeat
-                  center center/cover;
-              "
-            >
-              <div
-                class="bg-interface-100 bg-opacity-0 transition-opacity duration-500 ease-in-out absolute w-full h-full group-hover:bg-opacity-80 rounded-lg flex flex-col items-center justify-center"
-              >
-                <div
-                  class="transform transition-transform duration-700 ease-in-out translate-y-24 opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 max-w-xs flex flex-col items-center justify-center text-center"
-                >
-                  <h3 class="text-white">
-                    <a
-                      href="portfolio-details.html"
-                      class="text-3xl font-semibold text-white"
-                      >User Data Collects for Movie App</a
-                    >
-                  </h3>
-                  <span class="flex items-center gap-2 text-white">
-                    <span
-                      class="w-2 h-2 rounded-full inline-block bg-new-500"
-                    ></span>
-                    UI UX Project</span
-                  >
-                  <a
-                    href="portfolio-details.html"
-                    class="grid place-content-center mt-6 px-3 py-2 border border-new-500 text-new-500 text-sm rounded"
-                    >View Project
-                  </a>
-                </div>
-              </div>
-            </div>
-            <!-- Single Item -->
-            <div
-              class="relative group min-h-[370px] rounded-lg cursor-pointer overflow-hidden"
-              style="
-                background: url('assets/images/portfolio/ms-4.jpg') no-repeat
-                  center center/cover;
-              "
-            >
-              <div
-                class="bg-interface-100 bg-opacity-0 transition-opacity duration-500 ease-in-out absolute w-full h-full group-hover:bg-opacity-80 rounded-lg flex flex-col items-center justify-center"
-              >
-                <div
-                  class="transform transition-transform duration-700 ease-in-out translate-y-24 opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 max-w-xs flex flex-col items-center justify-center text-center"
-                >
-                  <h3 class="text-white">
-                    <a
-                      href="portfolio-details.html"
-                      class="text-3xl font-semibold text-white"
-                      >User Data Collects for Movie App</a
-                    >
-                  </h3>
-                  <span class="flex items-center gap-2 text-white">
-                    <span
-                      class="w-2 h-2 rounded-full inline-block bg-new-500"
-                    ></span>
-                    UI UX Project</span
-                  >
-                  <a
-                    href="portfolio-details.html"
-                    class="grid place-content-center mt-6 px-3 py-2 border border-new-500 text-new-500 text-sm rounded"
-                    >View Project
-                  </a>
-                </div>
-              </div>
-            </div>
-            <!-- Single Item -->
-            <div
-              class="relative group min-h-[370px] rounded-lg cursor-pointer overflow-hidden"
-              style="
-                background: url('assets/images/portfolio/ms-5.jpg') no-repeat
-                  center center/cover;
-              "
-            >
-              <div
-                class="bg-interface-100 bg-opacity-0 transition-opacity duration-500 ease-in-out absolute w-full h-full group-hover:bg-opacity-80 rounded-lg flex flex-col items-center justify-center"
-              >
-                <div
-                  class="transform transition-transform duration-700 ease-in-out translate-y-24 opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 max-w-xs flex flex-col items-center justify-center text-center"
-                >
-                  <h3 class="text-white">
-                    <a
-                      href="portfolio-details.html"
-                      class="text-3xl font-semibold text-white"
-                      >User Data Collects for Movie App</a
-                    >
-                  </h3>
-                  <span class="flex items-center gap-2 text-white">
-                    <span
-                      class="w-2 h-2 rounded-full inline-block bg-new-500"
-                    ></span>
-                    UI UX Project</span
-                  >
-                  <a
-                    href="portfolio-details.html"
-                    class="grid place-content-center mt-6 px-3 py-2 border border-new-500 text-new-500 text-sm rounded"
-                    >View Project
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Button -->
-          <div class="flex justify-center mt-14">
-            <a
-              href="#"
-              class="text-white text-lg font-medium rounded-lg border border-white py-3 px-8 text-center"
-              >See More</a
-            >
+              @endforeach
           </div>
         </div>
       </section>
