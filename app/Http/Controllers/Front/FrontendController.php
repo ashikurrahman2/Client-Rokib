@@ -313,8 +313,8 @@ class FrontendController extends Controller
 
         public function pro()
     {
-        $abouts = About::all();
-        return view('frontend.pages.project', compact('abouts'));
+        $portfolios = Portfolio::all();
+        return view('frontend.pages.project', compact('portfolios'));
     }
       // Contact page
     public function Contact()

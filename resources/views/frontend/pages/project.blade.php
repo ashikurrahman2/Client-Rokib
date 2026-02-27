@@ -48,9 +48,9 @@
             <!-- Grid -->
             <div class="grid grid-cols-1 gap-y-5 md:grid-cols-2 lg:grid-cols-3 md:gap-5 lg:gap-7">
                 <!-- Single Item -->
-    
+                 @foreach($portfolios as $index => $portfolio)
                 <div class="relative group min-h-[370px] rounded-lg cursor-pointer overflow-hidden portfolio-item" style="
-                    background: url('{{ asset('/') }}frontend/assets/images/portfolio/ms-1.jpg') no-repeat
+                    background: url('{{ asset($portfolio->image) }}') no-repeat
                       center center/cover;
                   ">
                     <div
@@ -58,123 +58,27 @@
                         <div
                             class="transform transition-transform duration-700 ease-in-out translate-y-24 opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 max-w-xs flex flex-col items-center justify-center text-center">
                             <h3 class="text-white">
-                                <a href="portfolio-details.html" class="text-3xl font-semibold text-white">User Data
-                                    Collects for Movie App</a>
+                                <a href="portfolio-details.html" class="text-3xl font-semibold text-white">
+                                    {{ $portfolio->title }}
+                                    </a>
                             </h3>
                             <span class="flex items-center gap-2 text-white">
                                 <span class="w-2 h-2 rounded-full inline-block bg-new-500"></span>
-                                UI UX Project</span>
-                            <a href="portfolio-details.html"
+                                {{ $portfolio->sub_title }}</span>
+                            <a href="{{ $portfolio->pro_link }}"
+                                target="_blank"
                                 class="grid place-content-center  mt-6 px-3 py-2.5 border border-new-500 text-new-500 text-sm rounded hover:border-transparent hover:bg-new-500 hover:text-interface-100 transition ">View
                                 Project
                             </a>
                         </div>
                     </div>
                 </div>
-                <!-- Single Item -->
-                <div class="relative group min-h-[370px] rounded-lg cursor-pointer overflow-hidden lg:col-span-2 portfolio-item"
-                    style="
-                    background: url('assets/images/portfolio/ms-2.jpg') no-repeat
-                      center center/cover;
-                  ">
-                    <div
-                        class="bg-interface-100 bg-opacity-0 transition-opacity duration-500 ease-in-out absolute w-full h-full group-hover:bg-opacity-80 rounded-lg flex flex-col items-center justify-center">
-                        <div
-                            class="transform transition-transform duration-700 ease-in-out translate-y-24 opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 max-w-xs flex flex-col items-center justify-center text-center">
-                            <h3 class="text-white">
-                                <a href="portfolio-details.html" class="text-3xl font-semibold text-white">User Data
-                                    Collects for Movie App</a>
-                            </h3>
-                            <span class="flex items-center gap-2 text-white">
-                                <span class="w-2 h-2 rounded-full inline-block bg-new-500"></span>
-                                UI UX Project</span>
-                            <a href="portfolio-details.html"
-                                class="grid place-content-center  mt-6 px-3 py-2.5 border border-new-500 text-new-500 text-sm rounded hover:border-transparent hover:bg-new-500 hover:text-interface-100 transition ">View
-                                Project
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Item -->
-                <div class="relative group min-h-[370px] rounded-lg cursor-pointer overflow-hidden" style="
-                    background: url('assets/images/portfolio/ms-3.jpg') no-repeat
-                      center center/cover;
-                  ">
-                    <div
-                        class="bg-interface-100 bg-opacity-0 transition-opacity duration-500 ease-in-out absolute w-full h-full group-hover:bg-opacity-80 rounded-lg flex flex-col items-center justify-center">
-                        <div
-                            class="transform transition-transform duration-700 ease-in-out translate-y-24 opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 max-w-xs flex flex-col items-center justify-center text-center">
-                            <h3 class="text-white">
-                                <a href="portfolio-details.html" class="text-3xl font-semibold text-white">User Data
-                                    Collects for Movie App</a>
-                            </h3>
-                            <span class="flex items-center gap-2 text-white">
-                                <span class="w-2 h-2 rounded-full inline-block bg-new-500"></span>
-                                UI UX Project</span>
-                            <a href="portfolio-details.html"
-                                class="grid place-content-center  mt-6 px-3 py-2.5 border border-new-500 text-new-500 text-sm rounded hover:border-transparent hover:bg-new-500 hover:text-interface-100 transition ">View
-                                Project
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Item -->
-                <div class="relative group min-h-[370px] rounded-lg cursor-pointer overflow-hidden" style="
-                    background: url('assets/images/portfolio/ms-4.jpg') no-repeat
-                      center center/cover;
-                  ">
-                    <div
-                        class="bg-interface-100 bg-opacity-0 transition-opacity duration-500 ease-in-out absolute w-full h-full group-hover:bg-opacity-80 rounded-lg flex flex-col items-center justify-center">
-                        <div
-                            class="transform transition-transform duration-700 ease-in-out translate-y-24 opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 max-w-xs flex flex-col items-center justify-center text-center">
-                            <h3 class="text-white">
-                                <a href="portfolio-details.html" class="text-3xl font-semibold text-white">User Data
-                                    Collects for Movie App</a>
-                            </h3>
-                            <span class="flex items-center gap-2 text-white">
-                                <span class="w-2 h-2 rounded-full inline-block bg-new-500"></span>
-                                UI UX Project</span>
-                            <a href="portfolio-details.html"
-                                class="grid place-content-center  mt-6 px-3 py-2.5 border border-new-500 text-new-500 text-sm rounded hover:border-transparent hover:bg-new-500 hover:text-interface-100 transition ">View
-                                Project
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Item -->
-                <div class="relative group min-h-[370px] rounded-lg cursor-pointer overflow-hidden" style="
-                    background: url('assets/images/portfolio/ms-5.jpg') no-repeat
-                      center center/cover;
-                  ">
-                    <div
-                        class="bg-interface-100 bg-opacity-0 transition-opacity duration-500 ease-in-out absolute w-full h-full group-hover:bg-opacity-80 rounded-lg flex flex-col items-center justify-center">
-                        <div
-                            class="transform transition-transform duration-700 ease-in-out translate-y-24 opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 max-w-xs flex flex-col items-center justify-center text-center">
-                            <h3 class="text-white">
-                                <a href="portfolio-details.html" class="text-3xl font-semibold text-white">User Data
-                                    Collects for Movie App</a>
-                            </h3>
-                            <span class="flex items-center gap-2 text-white">
-                                <span class="w-2 h-2 rounded-full inline-block bg-new-500"></span>
-                                UI UX Project</span>
-                            <a href="portfolio-details.html"
-                                class="grid place-content-center  mt-6 px-3 py-2.5 border border-new-500 text-new-500 text-sm rounded hover:border-transparent hover:bg-new-500 hover:text-interface-100 transition ">View
-                                Project
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Button -->
-            <div class="flex justify-center mt-10">
-                <a href="portfolio-grid.html"
-                    class="py-4 px-8 font-medium border-2 border-interface-200 rounded-lg text-interface-200 text-lg hover:border-transparent hover:text-white hover:bg-pblue-500 transition-all">See
-                    More</a>
+           @endforeach
             </div>
         </div>
         <div class="hidden xl:block">
-            <img src="assets/images/portfolio-grid/circle.png" class="absolute top-[60%] left-0" alt="">
-            <img src="assets/images/portfolio-grid/gr-circle.png" class="absolute right-0 top-0" alt="">
+            <img src="{{ asset('/') }}frontend/assets/images/portfolio-grid/circle.png" class="absolute top-[60%] left-0" alt="">
+            <img src="{{ asset('/') }}frontend/assets/images/portfolio-grid/gr-circle.png" class="absolute right-0 top-0" alt="">
         </div>
     </section>
 @endsection

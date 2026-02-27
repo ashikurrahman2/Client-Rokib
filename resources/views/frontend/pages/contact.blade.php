@@ -53,8 +53,7 @@
                   Our Address
                 </h4>
                 <address class="text-lg text-interface-200 not-italic">
-                  1012 Pebda Parkway, Mirpur 2 <br />
-                  Dhaka, Bangladesh
+                  {{$setting->address}} 
                 </address>
               </div>
             </div>
@@ -71,9 +70,9 @@
                   Open a chat or give us call at <br />
 
                   <a
-                    href="tel:310 841 5500"
+                    href="tel:{{$setting->phone_one}}"
                     class="font-bold text-interface-100"
-                    >310.841.5500</a
+                    >{{$setting->phone_one}}</a
                   >
                 </p>
               </div>

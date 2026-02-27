@@ -73,16 +73,16 @@
                                 <li class="pc-item"><a class="pc-link" href="{{ route('portfolio.index') }}">Portfolio</a>
                                 </li>
                          
-                            @can('view contact_messages')
+                            {{-- @can('view contact_messages')
                                 <li class="pc-item"><a class="pc-link" href="{{ route('contactus.index') }}">Contact US</a>
                                 </li>
                             @endcan
                             @can('view faq')
                                 <li class="pc-item"><a class="pc-link" href="{{ route('faq.index') }}">FAQ</a></li>
-                            @endcan
+                            @endcan --}}
                         </ul>
                     </li>
-                    <li class="pc-item pc-hasmenu">
+                    {{-- <li class="pc-item pc-hasmenu">
                         <a href="#!" class="pc-link">
                             <span class="pc-micon"><i class="ti ti-book"></i></span>
                             <span class="pc-mtext">Manage Product</span>
@@ -131,7 +131,7 @@
                             @endcan
                         </ul>
 
-                    </li>
+                    </li> --}}
 
                     <li class="pc-item pc-hasmenu">
                         <a href="{{ route('permissions.index') }}" class="pc-link">

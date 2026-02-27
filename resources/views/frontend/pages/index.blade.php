@@ -96,7 +96,7 @@
             <!-- Right -->
             <div class="lg:w-1/2">
               <div>
-                <img src="{{ asset('/') }}frontend/assets/images/hero/hero-three/model.png" alt="" />
+                <img src="{{ asset($slider->slider_image) }}" alt="" />
               </div>
             </div>
           </div>
@@ -507,7 +507,7 @@
       <!-- Grid Masonry End -->
 
            <!-- CTA  -->
-      <section
+      {{-- <section
         class="py-20"
         style="
           background: url('{{ asset('/') }}frontend/assets/images/bg/dev-cta.jpg') no-repeat center
@@ -557,6 +557,6 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> --}}
       <!-- CTA End -->
 @endsection

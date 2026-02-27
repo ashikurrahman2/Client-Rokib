@@ -38,6 +38,8 @@
                                         <th>SL</th>
                                         <th>Heading</th>
                                         <th>Subheading</th>
+                                        <th>Paragraph1</th>
+                                        <th>Paragraph2</th>
                                         <th>Image</th>
                                         <th>Action</th>
                                     </tr>
@@ -48,6 +50,8 @@
                                         <th>SL</th>
                                         <th>Heading</th>
                                         <th>Subheading</th>
+                                        <th>Paragraph1</th>
+                                        <th>Paragraph2</th>
                                         <th>Image</th>
                                         <th>Action</th>
                                     </tr>
@@ -126,6 +130,8 @@ $(function () {
             { data: 'DT_RowIndex', name: 'DT_RowIndex' },
             { data: 'heading', name: 'heading' },
             { data: 'subheading', name: 'subheading' },
+            { data: 'paragraph_1', name: 'paragraph_1' },
+            { data: 'paragraph_2', name: 'paragraph_2' },
             { data: 'image', name: 'image' },
             {
                 data: 'action',

@@ -19,37 +19,14 @@
               in advertising sector.
             </p>
             <div class="flex space-x-3 mt-7">
+          
               <a
-                href="http://"
+                href="{{$setting->linkedin}}"
                 class="text-interface-200 hover:bg-new-500 hover:text-interface-100 transition-all text-lg w-10 h-10 rounded-full bg-white bg-opacity-10 inline-flex justify-center items-center"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i class="fa-brands fa-facebook-f"></i>
-              </a>
-              <a
-                href="http://"
-                class="text-interface-200 hover:bg-new-500 hover:text-interface-100 transition-all text-lg w-10 h-10 rounded-full bg-white bg-opacity-10 inline-flex justify-center items-center"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i class="fa-brands fa-twitter"></i>
-              </a>
-              <a
-                href="http://"
-                class="text-interface-200 hover:bg-new-500 hover:text-interface-100 transition-all text-lg w-10 h-10 rounded-full bg-white bg-opacity-10 inline-flex justify-center items-center"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a
-                href="http://"
-                class="text-interface-200 hover:bg-new-500 hover:text-interface-100 transition-all text-lg w-10 h-10 rounded-full bg-white bg-opacity-10 inline-flex justify-center items-center"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-linkedin"></i>
               </a>
             </div>
           </div>
@@ -122,7 +99,7 @@
                     fill="#DAED1A"
                   />
                 </svg>
-                <p class="text-white">30 Commercial Road Fratton, Australia</p>
+                <p class="text-white">{{$setting->address}}</p>
               </li>
               <li class="flex space-x-2">
                 <svg
@@ -138,11 +115,11 @@
                   />
                 </svg>
                 <a href="tel:1-888-452-1505" class="text-white text-base"
-                  >1-888-452-1505</a
+                  >{{$setting->phone_one}}</a
                 >
               </li>
             </ul>
-            <div class="mt-7">
+            {{-- <div class="mt-7">
               <h4 class="font-medium text-white text-xl mb-4">
                 Subscribe Newsletter
               </h4>
@@ -160,7 +137,7 @@
                   </button>
                 </div>
               </form>
-            </div>
+            </div> --}}
           </div>
         </div>
       </div>
@@ -169,8 +146,8 @@
       <!-- Copyright -->
     <section class="px-4 bg-interface-100 py-5">
       <p class="text-xl font-medium text-white text-center">
-        Copyright &copy; 2023 – All Rights Reserved. Made by
-        <a href="#">QuomodoSoft</a>
+        Copyright &copy; {{date('Y')}} – All Rights Reserved. Made by
+        <a href="#">Rokibul Alam</a>
       </p>
     </section>
     <!-- Copyright End -->

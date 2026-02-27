@@ -48,6 +48,7 @@
       <!-- Breadcrumb End -->
 
       <!-- About -->
+      @foreach($abouts as $about)
       <section class="pt-120 lg:pb-0 pb-120 bg-[#F7F7FD]">
         <div class="mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
@@ -55,7 +56,7 @@
             {{-- My image --}}
             <div class="relative">
               <img
-                src="{{ asset('/') }}frontend/assets/images/about/model-pm.png"
+                src="{{ asset($about->image) }}"
                 class="w-full"
                 alt=""
               />
@@ -66,7 +67,7 @@
                   alt=""
                 />
                 <img
-                  src="{{ asset('/') }}frontend/assets/images/about/pm-shape-2.png"
+                  {{-- src="{{ asset('/') }}frontend/assets/images/about/pm-shape-2.png" --}}
                   class="absolute right-0 bottom-96"
                   alt=""
                 />
@@ -75,31 +76,15 @@
                 class="inline-flex gap-x-3 bg-white rounded-xl px-4 py-2.5 absolute bottom-10 left-[50%] transform translate-x-[-50%]"
               >
                 <a
-                  href="http://"
+                  href="{{$setting->facebook}}"
                   class="bg-pblue-500 bg-opacity-10 hover:bg-pblue-500 text-pblue-500 hover:text-white transition-all rounded-full text-lg w-10 h-10 rounded-ful inline-flex justify-center items-center"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i class="fa-brands fa-facebook-f"></i>
+                  <i class="fa-brands fa-github"></i>
                 </a>
                 <a
-                  href="http://"
-                  class="bg-pblue-500 bg-opacity-10 hover:bg-pblue-500 text-pblue-500 hover:text-white transition-all rounded-full text-lg w-10 h-10 rounded-ful inline-flex justify-center items-center"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i class="fa-brands fa-dribbble"></i>
-                </a>
-                <a
-                  href="http://"
-                  class="bg-pblue-500 bg-opacity-10 hover:bg-pblue-500 text-pblue-500 hover:text-white transition-all rounded-full text-lg w-10 h-10 rounded-ful inline-flex justify-center items-center"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i class="fa-brands fa-skype"></i>
-                </a>
-                <a
-                  href="http://"
+                  href="{{$setting->linkedin}}"
                   class="bg-pblue-500 bg-opacity-10 hover:bg-pblue-500 text-pblue-500 hover:text-white transition-all rounded-full text-lg w-10 h-10 rounded-ful inline-flex justify-center items-center"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -137,11 +122,12 @@
                 </span>
               </h2>
               <p class="text-xl text-interface-200 mb-4">
-                Hello there! My name is Robert Elisc. I am a web designer &
-                developer, and I'm very passionate and dedicated to my work.
-                With 20 years experience as a professional a graphic designer,
+                {{$about->paragraph_1}}
               </p>
-              <div class="mt-10 mb-10 space-y-6">
+              <p class="text-xl text-interface-200 mb-4">
+                {{$about->paragraph_2}}
+              </p>
+              {{-- <div class="mt-10 mb-10 space-y-6">
                 <div class="relative">
                   <div class="flex justify-between">
                     <span
@@ -196,17 +182,18 @@
                     ></div>
                   </div>
                 </div>
-              </div>
+              </div> --}}
               {{-- Signature --}}
-              <div>
+              {{-- <div>
                 <img src="{{ asset('/') }}frontend/assets/images/about/pm-signature.png" alt="" />
                 <span class="text-xl text-interface-100 font-medium"
                   >CEO & Founder of QuomodoSoft</span
                 >
-              </div>
+              </div> --}}
             </div>
           </div>
         </div>
       </section>
+      @endforeach
       <!-- About End -->
 @endsection
