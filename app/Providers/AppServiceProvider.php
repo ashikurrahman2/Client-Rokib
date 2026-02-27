@@ -64,9 +64,6 @@ class AppServiceProvider extends ServiceProvider
         $seo = Seo::first();
         view()->share('seo', $seo);
 
-        // Categories ডেটা শেয়ার (with relations)
-        $categories = Category::with('subcategories.childCategories')->withCount('products')->get();
-        view()->share('categories', $categories);
     }
 
     

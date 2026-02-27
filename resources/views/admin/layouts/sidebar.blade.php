@@ -72,66 +72,9 @@
 
                                 <li class="pc-item"><a class="pc-link" href="{{ route('portfolio.index') }}">Portfolio</a>
                                 </li>
-                         
-                            {{-- @can('view contact_messages')
-                                <li class="pc-item"><a class="pc-link" href="{{ route('contactus.index') }}">Contact US</a>
-                                </li>
-                            @endcan
-                            @can('view faq')
-                                <li class="pc-item"><a class="pc-link" href="{{ route('faq.index') }}">FAQ</a></li>
-                            @endcan --}}
                         </ul>
                     </li>
-                    {{-- <li class="pc-item pc-hasmenu">
-                        <a href="#!" class="pc-link">
-                            <span class="pc-micon"><i class="ti ti-book"></i></span>
-                            <span class="pc-mtext">Manage Product</span>
-                            <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
-                        </a>
-
-                        <ul class="pc-submenu">
-                            @can('view product')
-                                <li class="pc-item"><a class="pc-link" href="{{ route('product.index') }}">product</a>
-                                </li>
-                            @endcan
-                            @can('view category')
-                                <li class="pc-item"><a class="pc-link" href="{{ route('category.index') }}">Categories</a>
-                                </li>
-                            @endcan
-                            @can('view subcategory')
-                                <li class="pc-item"><a class="pc-link"
-                                        href="{{ route('subcategory.index') }}">Subcategories</a>
-                                </li>
-                            @endcan
-                            @can('view childcategory')
-                                <li class="pc-item"><a class="pc-link"
-                                        href="{{ route('childcategory.index') }}">Childcategories</a>
-                                </li>
-                            @endcan
-                            @can('view brand')
-                                <li class="pc-item"><a class="pc-link" href="{{ route('brand.index') }}">Brand</a>
-                                </li>
-                            @endcan
-                            @can('view pickuppoint')
-                                <li class="pc-item"><a class="pc-link" href="{{ route('pickuppoint.index') }}">Pick Up
-                                        Point</a>
-                                </li>
-                            @endcan
-                            @can('view campaing')
-                                <li class="pc-item"><a class="pc-link" href="{{ route('campaing.index') }}">Campaing</a>
-                                </li>
-                            @endcan
-                            @can('view coupon')
-                                <li class="pc-item"><a class="pc-link" href="{{ route('coupon.index') }}">Coupon</a>
-                                </li>
-                            @endcan
-                            @can('view brand')
-                                <li class="pc-item"><a class="pc-link" href="{{ route('warehouse.index') }}">Warehouse</a>
-                                </li>
-                            @endcan
-                        </ul>
-
-                    </li> --}}
+             
 
                     <li class="pc-item pc-hasmenu">
                         <a href="{{ route('permissions.index') }}" class="pc-link">
@@ -162,14 +105,6 @@
                 @endrole
 
             </ul>
-            {{-- <div class="card nav-action-card">
-                <div class="card-body">
-                    <h5 class="text-white">Help Center</h5>
-                    <p class="text-white text-opacity-75">Please contact us for more questions.</p><a
-                        target="_blank" href="https://phoenixcoded.authordesk.app/" class="btn btn-primary">Go to
-                        help Center</a>
-                </div>
-            </div> --}}
         </div>
     </div>
 </nav>
